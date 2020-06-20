@@ -1,0 +1,50 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.12'
+    }
+}
+
+plugins {
+    id 'java'
+    id("org.springframework.boot") version "2.2.0.RELEASE" apply false
+    id("io.spring.dependency-management") version "1.0.8.RELEASE"
+}
+
+apply plugin: 'java-library'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'maven-publish'
+apply plugin: 'signing'
+
+sourceCompatibility = 1.8
+
+group 'com.4dconcept.springframework.data'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven{
+        url "http://files.basex.org/maven"
+    }
+}
+
+dependencyManagement {
+    imports {
+        mavenBom(SpringBootPlugin.BOM_COORDINATES)
+    }
+}
+
+dependencies {
+    api 'org.springframework.data:spring-data-commons'
+    api 'org.springframework:spring-context'
+
+    implementation group: 'net.xqj', name: 'basex-xqj', version: '9.0'
+    implementation group: 'org.basex', name: 'basex-api', version: '9.2.4'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
