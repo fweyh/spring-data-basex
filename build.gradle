@@ -41,10 +41,13 @@ dependencyManagement {
 
 dependencies {
     api 'org.springframework.data:spring-data-commons'
-    api 'org.springframework:spring-context'
 
+    implementation 'org.springframework:spring-context'
+    implementation 'org.springframework:spring-oxm'
+    implementation 'org.springframework:spring-tx'
     implementation group: 'net.xqj', name: 'basex-xqj', version: '9.0'
     implementation group: 'org.basex', name: 'basex-api', version: '9.2.4'
+
     testImplementation 'org.hamcrest:hamcrest-core'
     testImplementation 'org.hamcrest:hamcrest-library'
     testImplementation 'org.mockito:mockito-core'

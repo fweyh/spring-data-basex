@@ -1,4 +1,6 @@
 package com._4dconcept.springframework.data.basex.core.convert;
 
-public interface BasexReader<T> {
+import org.springframework.data.convert.EntityReader;
+
+public interface BasexReader<T> extends EntityReader<T, BasexContentHolder> {
 }

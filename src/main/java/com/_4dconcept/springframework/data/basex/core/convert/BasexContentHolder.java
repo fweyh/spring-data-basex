@@ -4,7 +4,7 @@ package com._4dconcept.springframework.data.basex.core.convert;
  * A simple content holder used by BasexConverter
  * @author Fabien Weyh
  *
- * Copied from spring-data-marklogic
+ * Modified from spring-data-marklogic
  * @author Stéphane Toussaint
  */
 public class BasexContentHolder {

@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * @author Fabien Weyh
  *
- * Copied from spring-data-marklogic
+ * Modified from spring-data-marklogic
  * @author Stéphane Toussaint
  */
 public interface BasexOperations {
@@ -181,16 +181,16 @@ public interface BasexOperations {
     <T> List<T> findAll(Class<T> entityClass, BasexOperationOptions options);
 
     /**
-     * Execute the given XClientQuery script. Optional external variables can be pass with options parameters
+     * Execute the given XQuery script. Optional external variables can be pass with options parameters
      * @param query the query to execute
      * @param options optional options used for the query execution
      */
-    void invokeAdhocClientQuery(String query, BasexInvokeOperationOptions options);
+    void invokeAdhocQuery(String query, BasexInvokeOperationOptions options);
 
     /**
-     * Execute the given XClientQuery script. Optional external variables can be pass with options parameters
+     * Execute the given XQuery script. Optional external variables can be pass with options parameters
      * The returned content if any will be converted as resultClass type.
-     * More than one result will trigger a DataRetrievalFailureException. You must use invokeAdhocClientQueryAsList in such cases.
+     * More than one result will trigger a DataRetrievalFailureException. You must use invokeAdhocQueryAsList in such cases.
      * @param query the query to execute
      * @param resultClass the expected return content type.
      * @param options optional options used for the query execution
@@ -198,10 +198,10 @@ public interface BasexOperations {
      * @return one result or null if no content returned
      */
     @Nullable
-    <T> T invokeAdhocClientQuery(String query, Class<T> resultClass, BasexInvokeOperationOptions options);
+    <T> T invokeAdhocQuery(String query, Class<T> resultClass, BasexInvokeOperationOptions options);
 
     /**
-     * Execute the given XClientQuery script. Optional external variables can be pass with options parameters
+     * Execute the given XQuery script. Optional external variables can be pass with options parameters
      * The returned content if any will be converted as resultClass type.
      * @param query the query to execute
      * @param resultClass the expected return content type.
@@ -209,7 +209,7 @@ public interface BasexOperations {
      * @param <T> The entity type
      * @return a List of result or null if no content returned
      */
-    <T> List<T> invokeAdhocClientQueryAsList(String query, Class<T> resultClass, BasexInvokeOperationOptions options);
+    <T> List<T> invokeAdhocQueryAsList(String query, Class<T> resultClass, BasexInvokeOperationOptions options);
 
     /**
      * Execute the remote module script. Optional external variables can be pass with options parameters
