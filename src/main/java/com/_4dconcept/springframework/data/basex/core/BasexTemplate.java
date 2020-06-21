@@ -155,14 +155,6 @@ public class BasexTemplate implements BasexOperations {
 
     @Override
     public <T> List<T> invokeAdhocQueryAsList(String query, Class<T> resultClass, BasexInvokeOperationOptions options) {
-        /*return returnInSession(session -> {
-            try {
-                ResultSequence resultSequence = session.submitRequest(buildAdhocRequest(query, options, session));
-                return prepareResultList(resultSequence, resultClass, options, this.marklogicConverter);
-            } catch (RequestException re) {
-                throw new DataRetrievalFailureException(SUBMISSION_ERROR_MSG, re);
-            }
-        });*/
         List<T> resultList = new ArrayList<>();
         try (ClientQuery clientQuery = clientSession.query(query)) {
             while (clientQuery.more()) {
