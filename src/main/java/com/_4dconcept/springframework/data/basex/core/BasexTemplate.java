@@ -14,6 +14,12 @@ import org.springframework.util.Assert;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * @author Fabien Weyh
+ *
+ * Copied from spring-data-marklogic
+ * @author Stéphane Toussaint
+ */
 public class BasexTemplate implements BasexOperations {
 
     /*private final BasexConverter basexConverter;
@@ -184,8 +190,8 @@ public class BasexTemplate implements BasexOperations {
         return null;
     }
 
+    // First (really) naive implementation
     @Override
-    // public long count(ClientQuery query) {
     public long count(String query) throws IOException {
         ClientQuery clientQuery = clientSession.query(query);
         long count = 0;

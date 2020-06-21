@@ -7,6 +7,12 @@ import org.springframework.lang.Nullable;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * @author Fabien Weyh
+ *
+ * Copied from spring-data-marklogic
+ * @author Stéphane Toussaint
+ */
 public interface BasexOperations {
 
     /**
