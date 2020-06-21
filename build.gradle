@@ -45,6 +45,9 @@ dependencies {
 
     implementation group: 'net.xqj', name: 'basex-xqj', version: '9.0'
     implementation group: 'org.basex', name: 'basex-api', version: '9.2.4'
+    testImplementation 'org.hamcrest:hamcrest-core'
+    testImplementation 'org.hamcrest:hamcrest-library'
+    testImplementation 'org.mockito:mockito-core'
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

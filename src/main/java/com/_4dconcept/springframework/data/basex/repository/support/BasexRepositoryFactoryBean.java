@@ -110,8 +110,8 @@ public class BasexRepositoryFactoryBean<T extends Repository<S, ID>, S, ID exten
         super.afterPropertiesSet();
         Assert.state(operations != null, "MongoTemplate must not be null!");
 
-        if (!mappingContextConfigured) {
+        /*if (!mappingContextConfigured) {
             setMappingContext(operations.getConverter().getMappingContext());
-        }
+        }*/
     }
 }

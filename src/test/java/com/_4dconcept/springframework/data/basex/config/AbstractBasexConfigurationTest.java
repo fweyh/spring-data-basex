@@ -1,7 +1,9 @@
 package com._4dconcept.springframework.data.basex.config;
 
+import org.basex.api.client.ClientSession;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -29,6 +31,11 @@ public class AbstractBasexConfigurationTest {
         @Override
         protected URI getBasexUri() {
             return uri;
+        }
+
+        @Override
+        public ClientSession getClientSession() throws IOException {
+            return new ClientSession("localhost", 1984, "admin", "admin");
         }
     }
 
