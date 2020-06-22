@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author Fabien Weyh
  *
- * Inspired by spring-data-mongodb by:
+ * Derived from spring-data-mongodb project by:
  *
  * @author Oliver Gierke
  * @author Christoph Strobl
